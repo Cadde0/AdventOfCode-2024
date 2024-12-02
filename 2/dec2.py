@@ -15,7 +15,7 @@ for row in reports:
                 diff_next = abs(row[j] - row[j + 1])
                 if diff_next < 1 or diff_next > 3:
                     return False
-        # Check growth trend
+        # Check growth
         for k in range(2, len(row)):
             if (row[k - 1] > row[k - 2] and row[k] < row[k - 1]) or (
                 row[k - 1] < row[k - 2] and row[k] > row[k - 1]
@@ -23,7 +23,7 @@ for row in reports:
                 return False
         return True
 
-    # Check if the row is safe as-is
+    # Check if the row is safe
     if is_row_safe(row):
         safe_reports += 1
         continue
