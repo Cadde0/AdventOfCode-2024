@@ -1,7 +1,8 @@
 import re
 
 
-data = open("dec3_data.txt", "r")
+with open("dec3_data.txt", "r") as file:
+    data = file.read()
 
 pattern = r"mul\((\d{1,3}|mul\(.*?\)),(\d{1,3}|mul\(.*?\))\)"
 
